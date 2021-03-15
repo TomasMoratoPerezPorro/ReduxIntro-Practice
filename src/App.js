@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import HelloWorld from "./HelloWorld";
+import React, { Component } from 'react';
+import HelloWorld from './HelloWorld';
+import { createStore } from 'redux';
+const store = createStore(reducer);
 
-const App = () => {
-  const [tech] = useState("React");
-  return <HelloWorld tech={tech} />;
-};
+class App extends Component {
+  render() {
+    return <HelloWorld tech={this.state.tech} />;
+  }
+}
 
 export default App;
